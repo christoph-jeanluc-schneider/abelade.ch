@@ -1,1 +1,3 @@
 # abelade.ch
+
+I was bored and played cookie clicker. Then i had the idea for THIS...
