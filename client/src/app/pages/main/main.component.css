@@ -1,5 +1,140 @@
+/* DESKTOP */
+.desktop {
+    position: absolute;
+    top: 24px;
+    right: 24px;
+    width: 360px;
+    height: 200px;
+}
+
+.desktop .monitor {
+    width: 100%;
+    height: 100%;
+    padding: 3% 5% 12% 5%;
+    box-sizing: border-box;
+
+    background-color: rgb(130, 194, 255);
+    border: 6px solid #555;
+    border-radius: 8px;
+}
+
+.desktop .monitor .stand {
+    position: absolute;
+    top: 100%;
+    left: 50%;
+    transform: translateX(-50%);
+    width: 24px;
+    height: 24px;
+    background-color: #484848;
+}
+
+.desktop .monitor .base {
+    position: absolute;
+    top: calc(100% + 24px);
+    left: 50%;
+    transform: translateX(-50%);
+    width: 80%;
+    height: 8px;
+    background-color: #555;
+}
+
+.desktop .monitor .browser {
+    position: relative;
+    width: 100%;
+    height: 100%;
+    background-color: white;
+    border-top: 20px solid #ebebeb;
+    border-radius: 3px;
+}
+
+.desktop .monitor .dot {
+    position: absolute;
+    top: -13px;
+    right: 8px;
+    width: 6px;
+    height: 6px;
+    background-color: white;
+    border-radius: 50%;
+}
+.desktop .monitor .dot.d2 {
+    right: 17px;
+}
+.desktop .monitor .dot.d3 {
+    right: 26px;
+}
+
+.desktop .monitor .search-bar {
+    position: absolute;
+    top: -16px;
+    height: 12px;
+    left: 8px;
+    right: 36px;
+    background-color: white;
+    border-radius: 3px;
+    overflow: hidden;
+}
+
+.desktop .monitor .search-bar .progress {
+    display: inline-block;
+    height: 100%;
+    width: 0%;
+    background-color: rgb(102, 185, 123);
+    transition: all 0s;
+}
+.desktop .monitor .search-bar .progress.active {
+    transition: all 1s;
+    width: 100%;
+}
+
+.desktop .monitor .taskbar {
+    position: absolute;
+    bottom: 6px;
+    left: 6px;
+    width: calc(100% - 12px);
+    height: 12px;
+    background-color: rgb(55, 76, 116);
+    border-radius: 0 0 2px 2px;
+}
+
+.desktop .monitor button {
+    display: inline-block;
+    padding: 8px 24px;
+    margin: 0 auto;
+    border: none;
+    outline: none;
+    border-radius: 3px;
+    background-color: rgb(47, 161, 32);
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    font-size: 20px;
+    box-shadow: 1px 1px 6px rgba(0, 0, 0, 0.2);
+    transform: translate(-50%, -50%) scale(1);
+    transition: all 0.2s;
+    cursor: pointer;
+}
+.desktop .monitor button:hover {
+    background-color: rgb(49, 168, 33);
+}
+.desktop .monitor button:active {
+    transform: translate(-50%,-50%) scale(0.95);
+}
+.desktop .monitor button img {
+    display: inline-block;
+    height: 24px;
+    width: auto;
+    margin-right: 4px;
+    position: relative;
+    right: 6px;
+    top: 4px;
+}
+
+
+/* SERVERS */
 .servers {
     display: flex;
     flex-wrap: wrap;
     flex-direction: row-reverse;
+    position: absolute;
+    bottom: 24px;
 }

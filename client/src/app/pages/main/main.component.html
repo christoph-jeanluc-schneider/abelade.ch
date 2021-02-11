@@ -1,3 +1,26 @@
+<div class="desktop">
+    <div class="monitor">
+        <div class="browser">
+            <span class="dot d1">&nbsp;</span>
+            <span class="dot d2">&nbsp;</span>
+            <span class="dot d3">&nbsp;</span>
+
+            <div class="search-bar">
+                <div class="progress" [ngClass]="{'active': progressActive}">&nbsp;</div>
+            </div>
+
+            <button (click)="click()">
+                <img src="/assets/download.svg">
+                <span>abelade</span>
+            </button>
+        </div>
+        <span class="taskbar"></span>
+        
+        <div class="stand"></div>
+        <div class="base"></div>
+    </div>
+</div>
+
 <div class="servers">
     <app-server [type]="'dell_t40'"></app-server>
     <app-server [type]="'dell_t340'"></app-server>
