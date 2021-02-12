@@ -8,7 +8,9 @@ import { Component, OnInit } from '@angular/core';
 export class MainComponent implements OnInit {
 
   public progressActive = false;
-  
+
+  public consoleText = "";
+
   constructor() { }
 
   ngOnInit(): void {

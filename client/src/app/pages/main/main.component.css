@@ -68,7 +68,7 @@
     top: -16px;
     height: 12px;
     left: 8px;
-    right: 36px;
+    right:42px;
     background-color: white;
     border-radius: 3px;
     overflow: hidden;
@@ -93,7 +93,7 @@
     width: calc(100% - 12px);
     height: 12px;
     background-color: rgb(55, 76, 116);
-    border-radius: 0 0 2px 2px;
+    border-radius: 0 0 1px 1px;
 }
 
 .desktop .monitor button {
@@ -127,6 +127,36 @@
     position: relative;
     right: 6px;
     top: 4px;
+}
+
+
+/* CONSOLE */
+.console {
+    position: fixed;
+    top: 24px;
+    left: 24px;
+    width: 420px;
+    background-color: #333;
+    border: 6px solid #555;
+    border-top-width: 20px;
+    border-radius: 4px;
+    padding: 12px;
+}
+
+.console .dot {
+    position: absolute;
+    top: -13px;
+    right: 8px;
+    width: 6px;
+    height: 6px;
+    background-color: white;
+    border-radius: 50%;
+}
+.console .dot.d2 {
+    right: 17px;
+}
+.console .dot.d3 {
+    right: 26px;
 }
 
 
