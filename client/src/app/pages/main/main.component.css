@@ -1,53 +1,44 @@
+/* VIEW */
+.view {
+    position: fixed;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 48px;
+    display: grid;
+    grid-template-areas: 
+        "console desktop shop"
+        "servers servers servers";
+    grid-template-columns: repeat(3, 1fr);
+    grid-template-rows: 1fr 2fr;
+    padding: 24px;
+    gap: 24px;
+    background-color: skyblue;
+}
+
+.view>div {
+    box-shadow: 1px 1px 8px rgba(0, 0, 0, 0.1);
+}
+
+
 /* DESKTOP */
 .desktop {
-    position: absolute;
-    top: 24px;
-    right: 24px;
-    width: 360px;
-    height: 200px;
+    grid-area: desktop;
+    position: relative;
+    border-radius: 4px;
+    overflow: hidden;
 }
 
-.desktop .monitor {
-    width: 100%;
-    height: 100%;
-    padding: 3% 5% 12% 5%;
-    box-sizing: border-box;
-
-    background-color: rgb(130, 194, 255);
-    border: 6px solid #555;
-    border-radius: 8px;
-}
-
-.desktop .monitor .stand {
-    position: absolute;
-    top: 100%;
-    left: 50%;
-    transform: translateX(-50%);
-    width: 24px;
-    height: 24px;
-    background-color: #484848;
-}
-
-.desktop .monitor .base {
-    position: absolute;
-    top: calc(100% + 24px);
-    left: 50%;
-    transform: translateX(-50%);
-    width: 80%;
-    height: 8px;
-    background-color: #555;
-}
-
-.desktop .monitor .browser {
+.desktop .browser {
     position: relative;
     width: 100%;
     height: 100%;
     background-color: white;
-    border-top: 20px solid #ebebeb;
-    border-radius: 3px;
+    border-top: 20px solid #cccccc;
+    box-sizing: border-box;
 }
 
-.desktop .monitor .dot {
+.desktop .browser .dot {
     position: absolute;
     top: -13px;
     right: 8px;
@@ -56,53 +47,43 @@
     background-color: white;
     border-radius: 50%;
 }
-.desktop .monitor .dot.d2 {
+.desktop .browser .dot.d2 {
     right: 17px;
 }
-.desktop .monitor .dot.d3 {
+.desktop .browser .dot.d3 {
     right: 26px;
 }
 
-.desktop .monitor .search-bar {
+.desktop .browser .search-bar {
     position: absolute;
     top: -16px;
     height: 12px;
     left: 8px;
-    right:42px;
+    right: 42px;
     background-color: white;
-    border-radius: 3px;
+    border-radius: 2px;
     overflow: hidden;
 }
 
-.desktop .monitor .search-bar .progress {
+.desktop .browser .search-bar .progress {
     display: inline-block;
     height: 100%;
     width: 0%;
     background-color: rgb(102, 185, 123);
     transition: all 0s;
 }
-.desktop .monitor .search-bar .progress.active {
+.desktop .browser .search-bar .progress.active {
     transition: all 1s;
     width: 100%;
 }
 
-.desktop .monitor .taskbar {
-    position: absolute;
-    bottom: 6px;
-    left: 6px;
-    width: calc(100% - 12px);
-    height: 12px;
-    background-color: rgb(55, 76, 116);
-    border-radius: 0 0 1px 1px;
-}
-
-.desktop .monitor button {
+.desktop .browser button {
     display: inline-block;
     padding: 8px 24px;
     margin: 0 auto;
     border: none;
     outline: none;
-    border-radius: 3px;
+    border-radius: 4px;
     background-color: rgb(47, 161, 32);
     position: absolute;
     top: 50%;
@@ -113,13 +94,13 @@
     transition: all 0.2s;
     cursor: pointer;
 }
-.desktop .monitor button:hover {
+.desktop .browser button:hover {
     background-color: rgb(49, 168, 33);
 }
-.desktop .monitor button:active {
+.desktop .browser button:active {
     transform: translate(-50%,-50%) scale(0.95);
 }
-.desktop .monitor button img {
+.desktop .browser button img {
     display: inline-block;
     height: 24px;
     width: auto;
@@ -132,10 +113,8 @@
 
 /* CONSOLE */
 .console {
-    position: fixed;
-    top: 24px;
-    left: 24px;
-    width: 420px;
+    grid-area: console;
+    position: relative;
     background-color: #333;
     border: 6px solid #555;
     border-top-width: 20px;
@@ -160,11 +139,84 @@
 }
 
 
+/* SHOP */
+.shop {
+    grid-area: shop;
+    position: relative;
+    background-color: white;
+    border-top: 20px solid #cccccc;
+    border-radius: 4px;
+    padding: 12px;
+}
+
+.shop .dot {
+    position: absolute;
+    top: -13px;
+    right: 8px;
+    width: 6px;
+    height: 6px;
+    background-color: white;
+    border-radius: 50%;
+}
+.shop .dot.d2 {
+    right: 17px;
+}
+.shop .dot.d3 {
+    right: 26px;
+}
+
+
 /* SERVERS */
 .servers {
+    grid-area: servers;
+    background-color: white;
+    border-top: 20px solid #cccccc;
+    border-radius: 4px;
+    position: relative;
+}
+
+.servers .dot {
+    position: absolute;
+    top: -13px;
+    right: 8px;
+    width: 6px;
+    height: 6px;
+    background-color: white;
+    border-radius: 50%;
+}
+.servers .dot.d2 {
+    right: 17px;
+}
+.servers .dot.d3 {
+    right: 26px;
+}
+
+.servers .my-servers {
+    position: relative;
     display: flex;
     flex-wrap: wrap;
     flex-direction: row-reverse;
-    position: absolute;
-    bottom: 24px;
+    overflow: hidden;
+    padding: 12px;
+}
+
+/* TASKBAR */
+.taskbar {
+    position: fixed;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    height: 48px;
+    background-color: #0b1b49;
+}
+
+.taskbar p {
+    display: inline-block;
+    color: white;
+    padding: 14px 24px;
+    margin: 0;
+}
+
+.taskbar p.active {
+    background-color: #32488a;
 }

@@ -1,5 +1,6 @@
-<div class="desktop">
-    <div class="monitor">
+<div class="view">
+
+    <div class="desktop" (click)="active = 'desktop'">
         <div class="browser">
             <span class="dot d1">&nbsp;</span>
             <span class="dot d2">&nbsp;</span>
@@ -14,37 +15,44 @@
                 <span>abelade</span>
             </button>
         </div>
-        <span class="taskbar"></span>
-        
-        <div class="stand"></div>
-        <div class="base"></div>
-    </div>
-</div>
-
-<div class="console">
-    <span class="dot d1">&nbsp;</span>
-    <span class="dot d2">&nbsp;</span>
-    <span class="dot d3">&nbsp;</span>
-    
-    <div class="text">
-        {{ consoleText }}
     </div>
 
-    <p>
-        consoleText
-        consoleText
-        consoleText
-        consoleText
-        consoleText
-        consoleText
-        consoleText
-    </p>
+    <div class="console" (click)="active = 'console'">
+        <span class="dot d1">&nbsp;</span>
+        <span class="dot d2">&nbsp;</span>
+        <span class="dot d3">&nbsp;</span>
+
+        <div class="text">
+            <p>Bytes: {{bytes}}</p>
+        </div>
+
+    </div>
+
+    <div class="shop" (click)="active = 'shop'">
+        <span class="dot d1">&nbsp;</span>
+        <span class="dot d2">&nbsp;</span>
+        <span class="dot d3">&nbsp;</span>
+        <p>Shop</p>
+    </div>
+
+    <div class="servers" (click)="active = 'servers'">
+        <span class="dot d1">&nbsp;</span>
+        <span class="dot d2">&nbsp;</span>
+        <span class="dot d3">&nbsp;</span>
+
+        <div class="my-servers">
+            <app-server [type]="'dell_t40'"></app-server>
+            <app-server [type]="'dell_t340'"></app-server>
+            <app-server [type]="'hp_ml30'"></app-server>
+            <app-server [type]="'raspberry'"></app-server>
+        </div>
+    </div>
 
 </div>
 
-<div class="servers">
-    <app-server [type]="'dell_t40'"></app-server>
-    <app-server [type]="'dell_t340'"></app-server>
-    <app-server [type]="'hp_ml30'"></app-server>
-    <app-server [type]="'raspberry'"></app-server>
+<div class="taskbar">
+    <p [ngClass]="{'active': active == 'console'}" (click)="active = 'console'">Console</p>
+    <p [ngClass]="{'active': active == 'desktop'}" (click)="active = 'desktop'">Browser</p>
+    <p [ngClass]="{'active': active == 'shop'}" (click)="active = 'shop'">Shop</p>
+    <p [ngClass]="{'active': active == 'servers'}" (click)="active = 'servers'">Servers</p>
 </div>

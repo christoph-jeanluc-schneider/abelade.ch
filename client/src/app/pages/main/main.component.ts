@@ -9,7 +9,9 @@ export class MainComponent implements OnInit {
 
   public progressActive = false;
 
-  public consoleText = "";
+  public bytes = 0;
+  
+  public active = "desktop";
 
   constructor() { }
 
@@ -21,7 +23,7 @@ export class MainComponent implements OnInit {
     this.progressActive = true;
     await this.wait(1000);
     this.progressActive = false;
-    // bytes++;
+    this.bytes += 1024;
   }
 
   private wait(ms) {
