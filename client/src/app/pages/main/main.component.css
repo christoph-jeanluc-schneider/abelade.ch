@@ -16,8 +16,16 @@
     background-color: skyblue;
 }
 
-.view>div {
+
+/* WINDOW */
+.window {
+    transform: scale(1);
     box-shadow: 1px 1px 8px rgba(0, 0, 0, 0.1);
+    transition: all 0.2s;
+}
+.window.active {
+    transform: scale(1.02);
+    box-shadow: 2px 2px 12px rgba(0, 0, 0, 0.15);
 }
 
 
@@ -165,6 +173,15 @@
     right: 26px;
 }
 
+.shop .items {
+
+}
+
+.shop .items img {
+    width: auto;
+    height: 20px;
+}
+
 
 /* SERVERS */
 .servers {
@@ -207,7 +224,7 @@
     right: 0;
     bottom: 0;
     height: 48px;
-    background-color: #0b1b49;
+    background-color: #1a264b;
 }
 
 .taskbar p {
@@ -218,5 +235,5 @@
 }
 
 .taskbar p.active {
-    background-color: #32488a;
+    background-color: #3c4b79;
 }

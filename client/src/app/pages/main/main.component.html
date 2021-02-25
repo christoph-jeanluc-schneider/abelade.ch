@@ -1,6 +1,6 @@
 <div class="view">
 
-    <div class="desktop" (click)="active = 'desktop'">
+    <div class="desktop window" (click)="active = 'desktop'" [ngClass]="{'active': active == 'desktop'}">
         <div class="browser">
             <span class="dot d1">&nbsp;</span>
             <span class="dot d2">&nbsp;</span>
@@ -17,7 +17,7 @@
         </div>
     </div>
 
-    <div class="console" (click)="active = 'console'">
+    <div class="console window" (click)="active = 'console'" [ngClass]="{'active': active == 'console'}">
         <span class="dot d1">&nbsp;</span>
         <span class="dot d2">&nbsp;</span>
         <span class="dot d3">&nbsp;</span>
@@ -28,23 +28,42 @@
 
     </div>
 
-    <div class="shop" (click)="active = 'shop'">
+    <div class="shop window" (click)="active = 'shop'" [ngClass]="{'active': active == 'shop'}">
         <span class="dot d1">&nbsp;</span>
         <span class="dot d2">&nbsp;</span>
         <span class="dot d3">&nbsp;</span>
-        <p>Shop</p>
+
+        <div class="items">
+            <div>
+                <img src="/assets/img/raspberry.png">
+                <p>kaufen</p>
+            </div>
+            <div>
+                <img src="/assets/img/dell_t40.png">
+                <p>kaufen</p>
+            </div>
+            <div>
+                <img src="/assets/img/hp_ml30.png">
+                <p>kaufen</p>
+            </div>
+            <div>
+                <img src="/assets/img/dell_t340.png">
+                <p>kaufen</p>
+            </div>
+        </div>
+
     </div>
 
-    <div class="servers" (click)="active = 'servers'">
+    <div class="servers window" (click)="active = 'servers'" [ngClass]="{'active': active == 'servers'}">
         <span class="dot d1">&nbsp;</span>
         <span class="dot d2">&nbsp;</span>
         <span class="dot d3">&nbsp;</span>
 
         <div class="my-servers">
-            <app-server [type]="'dell_t40'"></app-server>
-            <app-server [type]="'dell_t340'"></app-server>
-            <app-server [type]="'hp_ml30'"></app-server>
-            <app-server [type]="'raspberry'"></app-server>
+            <!-- <img src="/assets/img/raspberry.png">
+            <img src="/assets/img/dell_t40.png">
+            <img src="/assets/img/hp_ml30.png">
+            <img src="/assets/img/dell_t340.png"> -->
         </div>
     </div>
 
